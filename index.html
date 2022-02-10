@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="">
+        <h1>Email</h1>
+        <input type="text" id="email" placeholder="email">
+        <input type="submit" id="checkemail">
+    </form>
+
+    <form action="" style="margin-top: 50px;">
+        <h1>Account</h1>
+        <input type="text" id="account" placeholder="account">
+        <input type="submit" id="checkaccount">
+    </form>
+    <script>
+
+        const isEmail = (email) => {
+            regexp = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+            return regexp.test(email) ? true : false
+        }
+
+        const checkEmail = document.getElementById('checkemail')
+        checkEmail.onclick = () => {
+            const email = document.getElementById('email').value
+            return isEmail(email) ? alert('Hợp lệ') : alert('Không hợp lệ')
+        }
+
+        const isAccount = (account) => {
+            regexp = /^[_a-z0-9]{6,}$/;
+            return regexp.test(account) ? true : false;
+        }
+
+        const checkAccount = document.getElementById('checkaccount')
+        checkAccount.onclick = () => {
+            const account = document.getElementById('account').value
+            return isAccount(account) ? alert('Account hợp lệ') : alert('Account không hợp lệ')
+        }
+
+    </script>
+</body>
+
+</html>
